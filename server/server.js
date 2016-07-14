@@ -1,19 +1,17 @@
 const express = require('express');
 const path = require('path');
-const knex = require('./database/config').db;
-const db = require('./database/utils')(knex);
+const users = require('./routes/users');
+const profiles = require('./routes/profiles');
+const statuses = require('./routes/statuses');
 
 const app = express();
 
 app.use(express.static(path.join(__dirname, '../public')));
 
+app.use('/api/users', users);
+// app.use('/api/profiles', profiles);
+// app.use('/api/statuses', statuses);
+
 const server = app.listen(process.env.PORT || 3000, () =>  {
   console.log(`Server ready on port ${server.address().port}`);
-});
-
-app.get('/api/users', function(req, res) {
-  db.getAll('users', (err, data) => {
-    if(err) return console.error(err);
-    res.json(data);
-  });
 });
