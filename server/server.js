@@ -11,7 +11,7 @@ const server = app.listen(process.env.PORT || 3000, () =>  {
   console.log(`Server ready on port ${server.address().port}`);
 });
 
-app.get('/users', function(req, res) {
+app.get('/api/users', function(req, res) {
   db.getAll('users', (err, data) => {
     if(err) return console.error(err);
     res.json(data);

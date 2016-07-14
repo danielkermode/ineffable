@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "babel-tape-runner client/test/*.js | tap-spec",
-    "stest": "tape server/test/*.js | tap-spec",
+    "stest": "cd server && tape test/*.js | tap-spec",
     "start": "node server/server",
     "build": "cd client && webpack --progress --profile --colors",
     "build:watch": "cd client && webpack --progress --profile --colors --watch",

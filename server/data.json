@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "dank",
+      "password": "fsh9h32f8"
+    }
+  ],
+  "profiles": [
+    {
+      "id": 1,
+      "userId": 1, //ONE TO ONE
+      "description": "hi there",
+      "imageUrl": "/image/png"
+    }
+  ],
+  "statuses": [
+    {
+      "id": 1,
+      "userId": 1, //ONE TO MANY
+      "status": "happy"
+    }
+  ]
+}
