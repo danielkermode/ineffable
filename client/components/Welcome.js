@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { addData } from '../redux/reducer';
 
-export class App extends Component {
+export class Welcome extends Component {
   static propTypes = {
     //propTypes go here
   };
@@ -21,7 +21,7 @@ export class App extends Component {
   render() {
     return (
       <div>
-        <div>App</div>
+        <div>Welcome</div>
         <button onClick={this.addData}>Add</button>
       </div>
     );
@@ -42,6 +42,6 @@ function mapDispatchToProps (dispatch) {
   };
 }
 
-const AppContainer = connect(mapStateToProps, mapDispatchToProps)(App);
+const WelcomeContainer = connect(mapStateToProps, mapDispatchToProps)(Welcome);
 
-export default AppContainer;
+export default WelcomeContainer;
