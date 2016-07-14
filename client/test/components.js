@@ -1,10 +1,10 @@
 import React from 'react';
 import test from 'tape';
 import { shallow } from 'enzyme';
-import { App } from '../components/App';
+import { Welcome } from '../components/Welcome';
 
-test('<App />', (t) => {
-  const wrapper = shallow(<App />);
+test('<Welcome />', (t) => {
+  const wrapper = shallow(<Welcome />);
   t.ok(wrapper.is('div'), 'has a div');
   t.end();
 });

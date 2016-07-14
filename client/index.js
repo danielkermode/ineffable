@@ -17,8 +17,10 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={Welcome} />
-      <Route path="/profiles/:id" component={Profile} />
+
     </Router>
   </Provider>,
   reactRoot
 );
+
+      // <Route path="/profiles/:id" component={Profile} />

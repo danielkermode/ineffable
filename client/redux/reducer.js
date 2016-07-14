@@ -1,5 +1,6 @@
 const initialState = {
-  data: []
+  data: [],
+  loginSwitch: "hidden" //hidden or login or register
 };
 
 export const ADD_DATA = 'ADD_DATA';
@@ -10,9 +11,17 @@ export const addData = (data) => {
   };
 };
 
+export const CHANGE_LOGIN_SWITCH = 'CHANGE_LOGIN_SWITCH';
+export const changeLoginSwitch = (switchString) => {
+  return {
+    switchString,
+    type: CHANGE_LOGIN_SWITCH
+  };
+};
+
 /* reducer */
 const reducer = (state = initialState, action) => {
-  let newData = state.data;
+  let newData = state.data.slice();
   switch (action.type) {
     case ADD_DATA:
       newData.push(action.data);
@@ -20,6 +29,13 @@ const reducer = (state = initialState, action) => {
         ...state,
         data: newData
       };
+    case CHANGE_LOGIN_SWITCH:
+      console.log('reducer...', action.switchString)
+      return {
+        ...state,
+        loginSwitch: action.switchString
+      };
+
     default:
       return state;
   }
