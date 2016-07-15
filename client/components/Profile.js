@@ -15,14 +15,6 @@ export class Profile extends Component {
     };
   }
 
-  addData = () => {
-    this.props.addData('dummy');
-  };
-
-  // addProfile = () => {
-  //   this.props.addProfile('');
-  // };
-
   render() {
     return (
       <div>
@@ -32,11 +24,12 @@ export class Profile extends Component {
             <h3>{this.props.data.description}</h3>
           </div>
           <div id="profileImage">
-          {/*image source
-          {this.props.data.imageUrl}*/}
+            <img src={this.props.data.imageUrl}/>
           </div>
 
           <div className="status-update">
+            <input type="text" placeholder="status" maxLength="17"
+            onkeyup="this.value = this.value.replace(/[^a-z]/,'')"/>
             <button >Share</button>
           </div>
         </div>

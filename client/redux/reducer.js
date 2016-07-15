@@ -1,8 +1,9 @@
+import { push } from 'react-router-redux'
+
 const initialState = {
   data: [],
   loginSwitch: "Hidden", //Hidden or Login or Register
   err: null,
-  userId: -1,
   user: {}
 };
 
@@ -49,6 +50,10 @@ export const createUser = (userObj) => {
           type: CREATE_USER_SUCCESS,
           data: res
         })
+      })
+      .then(() => {
+        console.log('pushing ,main')
+        dispatch(push('/main'))
       })
       .catch((err)=>{
         console.error(err)

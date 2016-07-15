@@ -1,11 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { addData } from '../redux/reducer';
+import { addData, createUser } from '../redux/reducer';
 
 export class Welcome extends Component {
-  static propTypes = {
-    //propTypes go here
-  };
 
   constructor(props) {
     super(props);
@@ -14,13 +11,31 @@ export class Welcome extends Component {
     };
   }
 
+  loginOrRegister = () => {
+      // create a user with details
+    if (this.props.loginSwitch === 'Register') {
+      // input strings
+      const userObj = {
+        name: document.getElementById('username').value,
+        password: document.getElementById('password').value
+      }
+      // call a dispatch
+      this.props.createUser(userObj)
+    } else if (this.props.loginSwitch === 'Login') {
+      // login with details
+    } else {
+      console.log('Not registering or logging in! ?????')
+  }
+  }
+
   render() {
     return (
       <div>
         {(this.props.loginSwitch !== 'Hidden') && <div className="login-register">
-          <input type="text" placeholder="username" />
-          <br/><input type="password" placeholder="password" />
-          <br/><button>{this.props.loginSwitch}</button>
+        {this.props.err}
+          <input id="username" type="text" placeholder="username" maxLength="15"/>
+          <br/><input id="password" type="password" placeholder="password" maxLength="20"/>
+          <br/><button onClick={this.loginOrRegister}>{this.props.loginSwitch}</button>
         </div>
         }
       </div>
@@ -38,6 +53,9 @@ function mapDispatchToProps (dispatch) {
   return {
     addData: (data) => {
       dispatch(addData(data));
+    },
+    createUser: (userObj) => {
+      dispatch(createUser(userObj));
     }
   };
 }
