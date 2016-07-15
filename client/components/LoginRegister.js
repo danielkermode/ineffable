@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { addData } from '../redux/reducer';
 
-export class App extends Component {
+export class Welcome extends Component {
   static propTypes = {
     //propTypes go here
   };
@@ -14,15 +14,12 @@ export class App extends Component {
     };
   }
 
-  addData = () => {
-    this.props.addData('dummy');
-  };
-
   render() {
     return (
-      <div>
-        <div>App</div>
-        <button onClick={this.addData}>Add</button>
+      <div className="login-register">
+        <input type="text" placeholder="username" />
+        <br/><input type="password" placeholder="password" />
+        <br/><button>{"Login"}</button>
       </div>
     );
   }
@@ -42,6 +39,6 @@ function mapDispatchToProps (dispatch) {
   };
 }
 
-const AppContainer = connect(mapStateToProps, mapDispatchToProps)(App);
+const WelcomeContainer = connect(mapStateToProps, mapDispatchToProps)(Welcome);
 
-export default AppContainer;
+export default WelcomeContainer;

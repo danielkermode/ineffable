@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import Welcome from './components/Welcome';
+import Profile from './components/Profile';
 import { Router, Route, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 import configureStore from './redux/store';
@@ -15,8 +16,11 @@ const reactRoot = document.getElementById('app');
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={App} />
+      <Route path="/" component={Welcome} />
+
     </Router>
   </Provider>,
   reactRoot
 );
+
+      // <Route path="/profiles/:id" component={Profile} />
