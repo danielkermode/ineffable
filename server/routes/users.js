@@ -23,6 +23,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+  console.log(req.body)
   const toCreate = req.body;
   db.add('users', toCreate, (err, data) => {
     if(err) {

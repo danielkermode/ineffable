@@ -10,9 +10,10 @@ import * as actions from './redux/reducer';
 
 //redux setup
 const userObj = {
-    name: 'abghjg',
-    password: '123'
-  }
+  name: 'abzzzzzzz',
+  password: '123'
+};
+
 const store = configureStore();
 store.dispatch(actions.createUser(userObj));
 
@@ -29,5 +30,3 @@ ReactDOM.render(
   </Provider>,
   reactRoot
 );
-
-      // <Route path="/profiles/:id" component={Profile} />
