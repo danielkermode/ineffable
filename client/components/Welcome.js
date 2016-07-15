@@ -29,7 +29,7 @@ export class Welcome extends Component {
     return (
       <div>
         <div className="welcome">
-          <div className="welcomeCircle"><h1>BEST NAME</h1></div>
+          <div className="welcomeCircle"><h1>Ineffable</h1></div>
           <div className="switchButtons">
             <button onClick={this.handleChange('Login')}>Sign In</button>
             <button onClick={this.handleChange('Register')}>Register</button>
@@ -43,7 +43,6 @@ export class Welcome extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log('map')
   return {
     loginSwitch: state.reducer.loginSwitch
   };

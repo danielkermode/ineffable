@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { addData, changeLoginSwitch } from '../redux/reducer';
-import LoginRegister from './LoginRegister'
+import Profile from './Profile'
+import Feed from './Feed'
 
 export class Main extends Component {
   static propTypes = {
@@ -19,6 +20,8 @@ export class Main extends Component {
   render() {
     return (
       <div>
+        <Profile />
+        <Feed />
       </div>
     );
   }

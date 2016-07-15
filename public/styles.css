@@ -2,16 +2,23 @@ body {
   text-align: center;
 }
 
+.welcome {
+  border-radius: 50px;
+  background-color: #e5e5e5;
+  padding: 3em;
+}
+
 .welcomeCircle {
   width: 10em;
   height: 10em;
   display: block;
-  border-radius: 50%;
+  border-radius: 30%;
   background-color: rgb(127,138,1);
   margin-left: auto;
   margin-right: auto;
   margin-top: 3em;
   padding: 1em;
+  margin-bottom: 2em;
 }
 
 .welcomeCircle > h1 {
@@ -27,6 +34,8 @@ body {
 }
 
 button {
+  margin: 3px;
+  border-radius: 10px;
   font-family: Helvetica, Arial;
   font-size: 1em;
   text-decoration: none;

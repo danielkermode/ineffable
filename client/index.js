@@ -5,7 +5,7 @@ import Main from './components/Main';
 import { Router, Route, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 import configureStore from './redux/store';
-import { syncHistoryWithStore } from 'react-router-redux';
+import { syncHistoryWithStore, push } from 'react-router-redux';
 import * as actions from './redux/reducer';
 
 //redux setup
@@ -16,7 +16,7 @@ const userObj = {
 
 const store = configureStore();
 store.dispatch(actions.createUser(userObj));
-
+store.dispatch(push('/main'))
 const history = syncHistoryWithStore(browserHistory, store);
 
 const reactRoot = document.getElementById('app');
