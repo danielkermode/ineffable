@@ -19,8 +19,8 @@ export class Welcome extends Component {
     return (
       <div>
         {(this.props.loginSwitch !== 'Hidden') && <div className="login-register">
-          <input type="text" placeholder="username" />
-          <br/><input type="password" placeholder="password" />
+          <input type="text" placeholder="username" maxlength="15"/>
+          <br/><input type="password" placeholder="password" maxlength="20"/>
           <br/><button>{this.props.loginSwitch}</button>
         </div>
         }

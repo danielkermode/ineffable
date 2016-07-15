@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Welcome from './components/Welcome';
-import Profile from './components/Profile';
+import Main from './components/Main';
 import { Router, Route, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 import configureStore from './redux/store';
@@ -24,7 +24,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={Welcome} />
-
+      <Route path="/main" component={Main} />
     </Router>
   </Provider>,
   reactRoot
