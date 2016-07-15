@@ -15,9 +15,9 @@ router.get('/:id', (req, res) => {
   db.findOne('users', { id }, (err, data) => {
     if(err) {
       console.error(err);
-      res.status(404).json({ status: 404, message: err.message })
+      res.status(404).json({ status: 404, message: err.message, code: err.code })
       return;
-    };
+    }
     res.json(data);
   });
 });
@@ -27,7 +27,7 @@ router.post('/', (req, res) => {
   db.add('users', toCreate, (err, data) => {
     if(err) {
       console.error(err);
-      res.status(400).json({ status: 400, message: err.message })
+      res.status(400).json({ status: 400, message: err.message, code: err.code })
       return;
     };
     res.json(data);
