@@ -28,7 +28,7 @@ router.put('/:id', (req, res) => {
   db.update('profiles', { id }, toUpdate, (err, data) => {
     if(err) {
       console.error(err);
-      res.status(400).json({ status: 400, message: err.message })
+      res.status(400).json({ status: 400, message: err.message, code: err.code })
       return;
     };
     res.json(data);
@@ -49,7 +49,7 @@ router.post('/', (req, res) => {
   db.add('profiles', toCreate, (err, data) => {
     if(err) {
       console.error(err);
-      res.status(400).json({ status: 400, message: err.message })
+      res.status(400).json({ status: 400, message: err.message, code: err.code })
       return;
     };
     res.json(data);
