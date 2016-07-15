@@ -25,6 +25,6 @@ test('getAll', (t) => {
     })
     .catch(err => {
       console.log(err);
-    })
+    });
 });
 

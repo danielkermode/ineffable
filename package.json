@@ -8,8 +8,9 @@
   },
   "scripts": {
     "test": "babel-tape-runner client/test/*.js | tap-spec",
-    "stest": "tape server/test/*.js | tap-spec",
+    "stest": "cd server && tape test/*.js | tap-spec",
     "start": "node server/server",
+    "server:dev": "nodemon server/server",
     "build": "cd client && webpack --progress --profile --colors",
     "build:watch": "cd client && webpack --progress --profile --colors --watch",
     "dev": "cd client && webpack-dev-server --hot --inline",
@@ -18,6 +19,7 @@
   "author": "danielkermode",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "dotenv": "^2.0.0",
     "express": "^4.14.0",
     "knex": "^0.11.7",
@@ -37,6 +39,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "babel-tape-runner": "^2.0.1",
     "enzyme": "^2.4.1",
+    "nodemon": "^1.9.2",
     "react-addons-test-utils": "^15.2.1",
     "tap-spec": "^4.1.1",
     "tape": "^4.6.0",
