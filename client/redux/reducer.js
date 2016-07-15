@@ -26,20 +26,28 @@ export const CREATE_USER_SUCCESS = 'CREATE_USER_SUCCESS'
 export const CREATE_USER_ERROR = 'CREATE_USER_ERROR'
 export const createUser = (userObj) => {
   return (dispatch) => {
-    console.log(userObj)
     fetch('/api/users', {
       method: "POST",
-      body: userObj
+      body: JSON.stringify(userObj),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
     })
       .then((res)=>{
-        console.log('post post', res)
-        return fetch('/api/users/' + res.body.id);
+        return res.json();
       })
-      .then((userData) => {
-        console.log(userData, 'is', typeof userData)
+      .then((res) => {
+        return fetch('/api/users/' + res);
+      })
+      .then((res) => {
+        return res.json();
+
+      })
+      .then((res) => {
         return dispatch({
           type: CREATE_USER_SUCCESS,
-          data: userData
+          data: res
         })
       })
       .catch((err)=>{
@@ -65,9 +73,11 @@ const reducer = (state = initialState, action) => {
         loginSwitch: action.switchString
       };
     case CREATE_USER_SUCCESS:
-      console.log('user seucess')
+      console.log('user success')
+      console.log(action)
       return {
-        ...state
+        ...state,
+        user: action.data
       };
     case CREATE_USER_ERROR:
       console.log('user error')
