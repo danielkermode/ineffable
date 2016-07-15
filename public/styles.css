@@ -21,7 +21,7 @@ body {
   color: white;
 }
 
-.login-register > input {
+.login-register input {
   line-height: 1.3em;
   font-size: 1.3em;
 }

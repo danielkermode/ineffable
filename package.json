@@ -9,7 +9,7 @@
   "scripts": {
     "test": "babel-tape-runner client/test/*.js | tap-spec",
     "stest": "cd server && tape test/*.js | tap-spec",
-    "start": "node server/server",
+    "start": "npm run build && node server/server",
     "server:dev": "nodemon server/server",
     "build": "cd client && webpack --progress --profile --colors",
     "build:watch": "cd client && webpack --progress --profile --colors --watch",
@@ -30,7 +30,8 @@
     "react-router": "^2.5.2",
     "react-router-redux": "^4.0.5",
     "redux": "^3.5.2",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": "^2.1.0",
+    "superagent": "^2.1.0"
   },
   "devDependencies": {
     "babel-loader": "^6.2.4",

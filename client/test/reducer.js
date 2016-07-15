@@ -11,5 +11,11 @@ test('reducer', (t) => {
   const login = 'login';
   store.dispatch(actions.changeLoginSwitch(login));
   t.equal(store.getState().reducer.loginSwitch, login, 'changeLoginSwitch can update the state ')
+
+  const userObj = {
+    name: 'abc',
+    password: '123'
+  }
+  store.dispatch(actions.createUser(userObj));
   t.end();
 });
