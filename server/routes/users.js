@@ -13,7 +13,23 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   const id = req.params.id;
   db.findOne('users', { id }, (err, data) => {
-    if(err) return console.error(err);
+    if(err) {
+      console.error(err);
+      res.status(404).json({ status: 404, message: err.message })
+      return;
+    };
+    res.json(data);
+  });
+});
+
+router.post('/', (req, res) => {
+  const toCreate = req.body;
+  db.add('users', toCreate, (err, data) => {
+    if(err) {
+      console.error(err);
+      res.status(400).json({ status: 400, message: err.message })
+      return;
+    };
     res.json(data);
   });
 });

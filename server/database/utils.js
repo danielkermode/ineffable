@@ -14,6 +14,9 @@ module.exports = function(knex) {
     findOne: function(table, params, callback) {
       knex(table).where(params)
         .then(function(resp){
+          if(resp.length === 0) {
+            throw new Error('No item found.');
+          }
           callback(null, resp[0]);
         })
         .catch(function(err){

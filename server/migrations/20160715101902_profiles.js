@@ -4,7 +4,7 @@ exports.up = function(knex, Promise) {
     table.increments('id').primary();
     table.string('description');
     table.string('imageUrl');
-    table.integer('userId');
+    table.integer('userId').notNullable();
     table.unique('userId');
     table.foreign('userId').references('id').inTable('users');
   });
