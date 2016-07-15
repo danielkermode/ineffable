@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { addData } from '../redux/reducer';
-import request from 'superagent'
 
 export class Welcome extends Component {
   static propTypes = {
