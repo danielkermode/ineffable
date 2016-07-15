@@ -1,6 +1,6 @@
 const initialState = {
   data: [],
-  loginSwitch: "hidden" //hidden or login or register
+  loginSwitch: "Hidden" //Hidden or Login or Register
 };
 
 export const ADD_DATA = 'ADD_DATA';

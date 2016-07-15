@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { addData } from '../redux/reducer';
+import request from 'superagent'
 
 export class Welcome extends Component {
   static propTypes = {
@@ -16,10 +17,13 @@ export class Welcome extends Component {
 
   render() {
     return (
-      <div className="login-register">
-        <input type="text" placeholder="username" />
-        <br/><input type="password" placeholder="password" />
-        <br/><button>{"Login"}</button>
+      <div>
+        {(this.props.loginSwitch !== 'Hidden') && <div className="login-register">
+          <input type="text" placeholder="username" />
+          <br/><input type="password" placeholder="password" />
+          <br/><button>{this.props.loginSwitch}</button>
+        </div>
+        }
       </div>
     );
   }

@@ -31,13 +31,12 @@ export class Welcome extends Component {
         <div className="welcome">
           <div className="welcomeCircle"><h1>BEST NAME</h1></div>
           <div className="switchButtons">
-          <div>{this.props.loginSwitch}</div>
-            <button onClick={this.handleChange('login')}>Sign In</button>
-            <button onClick={this.handleChange('register')}>Register</button>
+            <button onClick={this.handleChange('Login')}>Sign In</button>
+            <button onClick={this.handleChange('Register')}>Register</button>
           </div>
         </div>
         <br/>
-        <LoginRegister/>
+        <LoginRegister loginSwitch={this.props.loginSwitch} />
       </div>
     );
   }
