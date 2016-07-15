@@ -3,11 +3,13 @@ const path = require('path');
 const users = require('./routes/users');
 const profiles = require('./routes/profiles');
 const statuses = require('./routes/statuses');
+const bodyParser = require('body-parser');
 
 const app = express();
 
 app.use(express.static(path.join(__dirname, '../public')));
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/api/users', users);
 app.use('/api/profiles', profiles);
 app.use('/api/statuses', statuses);

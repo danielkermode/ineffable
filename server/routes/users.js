@@ -10,4 +10,12 @@ router.get('/', (req, res) => {
   });
 });
 
+router.get('/:id', (req, res) => {
+  const id = req.params.id;
+  db.findOne('users', { id }, (err, data) => {
+    if(err) return console.error(err);
+    res.json(data);
+  });
+});
+
 module.exports = router;

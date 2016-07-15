@@ -47,7 +47,7 @@ module.exports = function(knex) {
           callback(null, resp[0]);
         })
         .catch(function(err){
-          callback(err, resp);
+          callback(err, null);
         });
     }
   };

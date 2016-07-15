@@ -10,4 +10,20 @@ router.get('/', (req, res) => {
   });
 });
 
+router.get('/:id', (req, res) => {
+  const id = req.params.id;
+  db.findOne('statuses', { id }, (err, data) => {
+    if(err) return console.error(err);
+    res.json(data);
+  });
+});
+
+router.post('/', (req, res) => {
+  const status = req.body;
+  db.add('statuses', status, (err, data) => {
+    if(err) return console.error(err);
+    res.json(data);
+  });
+});
+
 module.exports = router;

@@ -10,4 +10,21 @@ router.get('/', (req, res) => {
   });
 });
 
+router.get('/:id', (req, res) => {
+  const id = req.params.id;
+  db.findOne('profiles', { id }, (err, data) => {
+    if(err) return console.error(err);
+    res.json(data);
+  });
+});
+
+router.put('/:id', (req, res) => {
+  const id = req.params.id;
+  const toUpdate = req.body;
+  db.update('profiles', { id }, toUpdate, (err, data) => {
+    if(err) return console.error(err);
+    res.json(data);
+  });
+});
+
 module.exports = router;
