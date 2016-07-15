@@ -2,7 +2,6 @@ const initialState = {
   data: [],
   loginSwitch: "Hidden", //Hidden or Login or Register
   err: null,
-  userId: -1,
   user: {}
 };
 

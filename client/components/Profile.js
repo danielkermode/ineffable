@@ -28,7 +28,7 @@ export class Profile extends Component {
           </div>
 
           <div className="status-update">
-            <input type="text" placeholder="status" maxlength="17"
+            <input type="text" placeholder="status" maxLength="17"
             onkeyup="this.value = this.value.replace(/[^a-z]/,'')"/>
             <button >Share</button>
           </div>
