@@ -12,6 +12,7 @@ const db = {
   }
 };
 
+console.error('CONFIG JS')
 module.exports = {
   db: knex(db)
 };

@@ -2,7 +2,7 @@
   "name": "ineffable",
   "version": "1.0.0",
   "description": "social network (not really)",
-  "main": "index.js",
+  "main": "server/server.js",
   "engines": {
     "node": "6.2.1"
   },
